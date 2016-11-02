@@ -2,27 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Product;
 
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function __construct()
+    public function index ()
     {
-        $this->middleware('auth');
+        return view('welcome');
     }
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
+     * @param null $category
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function show ($category = null)
     {
-        return view('home');
+        if (is_null($category)) {
+            $products = Product::where('status', 'available')
+                ->inRandomOrder()
+                ->limit(32)
+                ->get();
+        }
+        else {
+            $products = Product::where([
+                ['status', 'available'],
+                ['category', $category]
+            ])->get();
+            flash($category, 'info');
+        }
+
+        return view('home')->with('products', $products);
     }
 }
