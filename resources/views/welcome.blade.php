@@ -40,7 +40,7 @@
 
         <div id="description">
             <p><em>{{ config('app.name') }}</em> was a college standard entrepreneurship project, operational in Feb-March 2016.<br>
-                <strong>This project is now archived</strong>, but you may have a tour. You can also fork this project, it is completely free.</p>
+                <strong>This project is now archived</strong>, but you may have a tour. You can also <a href="https://github.com/rishianand9/project-foodcart.git">fork this project</a>, it is completely free.</p>
         </div>
 
         <hr>
