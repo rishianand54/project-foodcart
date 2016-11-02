@@ -43,7 +43,7 @@ class UserController extends Controller
         $this->validate($request, [
             'address' => 'required|string',
             'city' => 'required|string',
-            'pin_code' => 'required|digits:8',
+            'pin_code' => 'required|digits:6',
             'phone' => 'required|numeric',
         ]);
 

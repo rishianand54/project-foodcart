@@ -12,7 +12,7 @@
     @endif
 
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-6 col-md-offset-3 text-center">
             <form action="/user/edit-address" method="post" class="form-horizontal">
                 {{ csrf_field() }}
                 <div class="form-group">

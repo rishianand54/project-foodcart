@@ -25,6 +25,31 @@
 
         <!-- Scripts -->
         <script src="/js/all.js"></script>
+        <script>
+            $('#flash-overlay-modal').modal();
+            $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+
+            if ($(window).width() < 768) {
+                var b = document.getElementById('aisle-heading');
+                b.innerHTML = 'Aisles <i class="fa fa-angle-double-down" aria-hidden="true"></i>';
+                var ul = document.getElementById('aisles');
+                ul.style.display = 'none';
+                function toggleNavigation () {
+                    if (ul.style.display == 'initial') {
+                        ul.style.display = 'none';
+                        b.innerHTML = 'Aisles <i class="fa fa-angle-double-down" aria-hidden="true"></i>';
+                    }
+                    else {
+                        ul.style.display = 'initial';
+                        b.innerHTML = 'Aisles <i class="fa fa-angle-double-up" aria-hidden="true"></i>';
+                    }
+                }
+            }
+            if ($(window).width() > 768) {
+                var b = document.getElementById('aisle-heading');
+                b.style.display = 'none';
+            }
+        </script>
 
     </body>
 </html>

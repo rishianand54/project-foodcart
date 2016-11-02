@@ -1,0 +1,30 @@
+/**
+* New Styles
+* @author Rishi Anand <rishianand54@gmail.com>
+*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+}
+#app-body {
+    margin-top: 80px;
+    padding: 2vmin;
+}
+#side-navigation a {
+    text-decoration: none;
+}
+.strike-through {
+    text-decoration: line-through;
+}
+.highlight {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000;
+}
+#product-thumbnail {
+    height: 220px;
+}
+.aisles {
+    display: initial;
+}

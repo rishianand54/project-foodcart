@@ -59,7 +59,7 @@
                             {{ $product->quantity * 5 }} {{ $product->unit }}
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Add to Basket</button>
                 </form>
             </div>
         </div>

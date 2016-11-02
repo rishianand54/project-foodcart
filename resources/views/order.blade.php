@@ -6,28 +6,32 @@
     <div class="row">
         <div class="col-md-8">
             @if($orders->isEmpty())
-                <p>No items in Basket</p>
-                <a href="/home" class="btn btn-default">Add items to basket</a>
+                <div class="panel">
+                    <p>No items in Basket</p>
+                    <a href="/home" class="btn btn-default">Add items to basket</a>
+                </div>
             @else
-                <table class="table table-hover table-condensed">
-                    <tr>
-                        <th>Item</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th></th>
-                    </tr>
-                    @foreach($orders as $order)
+                <div class="table-responsive">
+                    <table class="table table-hover table-condensed">
                         <tr>
-                            <td>{{ title_case($order->product->name) }}</td>
-                            <td>{{ $order->quantity * $order->product->quantity }} {{ $order->product->unit }}</td>
-                            <td>{{ $order->quantity * $order->product->selling_price }}</td>
-                            <td><a href="{{ '/order/update/'. $order->id }}" class="btn btn-default"><i class="fa fa-times" aria-hidden="true"></i> Remove</a></td>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th></th>
                         </tr>
-                    @endforeach
-                </table>
-                <p class="highlight">
-                    Total: {{ $total = $orders->map(function ($item) { return $item->quantity * $item->product->selling_price; })->sum() }}
-                </p>
+                        @foreach($orders as $order)
+                            <tr>
+                                <td>{{ title_case($order->product->name) }}</td>
+                                <td>{{ $order->quantity * $order->product->quantity }} {{ $order->product->unit }}</td>
+                                <td>{{ $order->quantity * $order->product->selling_price }}</td>
+                                <td><a href="{{ '/order/update/'. $order->id }}" class="btn btn-default"><i class="fa fa-times" aria-hidden="true"></i> Remove</a></td>
+                            </tr>
+                        @endforeach
+                    </table>
+                    <p class="highlight">
+                        Total: {{ $total = $orders->map(function ($item) { return $item->quantity * $item->product->selling_price; })->sum() }}
+                    </p>
+                </div>
             @endif
         </div>
 
