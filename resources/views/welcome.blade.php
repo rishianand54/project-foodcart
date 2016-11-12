@@ -8,29 +8,10 @@
 
         <title>{{ config('app.name') }}</title>
 
-        <!-- Styles -->
         <link rel="stylesheet" href="/css/app.css">
         <link rel="stylesheet" href="/css/all.css">
-        <style>
-            #title {
-                font-size: 5rem;
-                font-family: 'Cinzel', serif;
-            }
-            #description {
-                font-size: 2rem;
-                font-family: 'Dancing Script', cursive;
-                margin-top: 2vh;
-                margin-bottom: 2vh;
-            }
-            #members p {
-                font-size: 1.6rem;
-                font-family: 'Merriweather', serif;
-                text-transform: uppercase;
-            }
-            #members {
-                margin-bottom: 4vh;
-            }
-        </style>
+
+        <link href="https://fonts.googleapis.com/css?family=Cinzel|Dancing+Script" rel="stylesheet">
     </head>
     <body>
     <main class="container-fluid text-center">
@@ -56,7 +37,7 @@
             <a href="https://www.facebook.com/rishianand9"><img class="img-responsive img-thumbnail" src="images/members/rishi.jpg" alt="Rishi Anand" /></a>
         </div>
 
-        <div>
+        <div id="continue-button">
             <a href="{{ url('/home') }}" class="btn btn-primary">Continue Tour <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                 <i class="fa fa-angle-double-right" aria-hidden="true"></i> <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
         </div>

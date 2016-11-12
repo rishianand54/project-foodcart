@@ -6,7 +6,9 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel">
-                <div class="panel-heading">Saved address</div>
+                <div class="panel-heading">
+                    <h3 class="panel-title">Saved address</h3>
+                </div>
 
                 @if(is_null($address))
                     <div class="panel-body">
@@ -46,7 +48,9 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel">
-                <div class="panel-heading">Past Orders</div>
+                <div class="panel-heading">
+                    <h3 class="panel-title">Past Orders</h3>
+                </div>
                 <div class="panel-body">
                     @if($orders->isEmpty())
                         <p>No orders placed</p>

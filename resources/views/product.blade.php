@@ -17,7 +17,7 @@
         <div class="col-md-6">
             <div class="panel">
                 <div class="panel-heading">
-                    <p>{{ title_case($product->name) }} - {{ title_case($product->category) }}</p>
+                    <h3 class="panel-title">{{ title_case($product->name) }} - {{ title_case($product->category) }}</h3>
                 </div>
                 <div class="panel-body">
                     <figure>
@@ -31,6 +31,19 @@
         </div>
 
         <div class="col-md-4 col-md-offset-1">
+            <div class="panel">
+                <div class="panel-heading">
+                    <p class="panel-title">Price per {{ $product->quantity}} {{ $product->unit }}</p>
+                </div>
+                <div class="panel-body">
+                    @if(($product->marked_price == $product->selling_price) or (empty($product->marked_price)))
+                        <span>&#8377; {{ $product->selling_price }}</span>
+                    @else
+                        <span class="strike-through">&#8377; {{ $product->marked_price }}</span>
+                        &nbsp; &nbsp; <span>&#8377; {{ $product->selling_price}}</span>
+                    @endif
+                </div>
+            </div>
             <div class="well">
                 <form action="{{ action('ProductController@addToBasket', ['product' => $product->id]) }}" method="post">
                     {{ csrf_field() }}

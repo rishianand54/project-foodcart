@@ -7,8 +7,12 @@
         <div class="col-md-8">
             @if($orders->isEmpty())
                 <div class="panel">
-                    <p>No items in Basket</p>
-                    <a href="/home" class="btn btn-default">Add items to basket</a>
+                    <div class="panel-heading">
+                        <h3 class="panel-title">No items in Basket</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <a href="/home" class="btn btn-default">Add items to basket</a>
+                    </div>
                 </div>
             @else
                 <div class="table-responsive">
